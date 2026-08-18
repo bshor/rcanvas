@@ -18,6 +18,7 @@ while PRs are in flight.
 |---|---|---|
 | Fix `delete_wpage()`: `make_canvas_url()` instead of `paste0()`, and import `httr::DELETE` | [#74](https://github.com/daranzolin/rcanvas/pull/74) | open |
 | Add `delete_assignment()` / `delete_assignments()` | [#75](https://github.com/daranzolin/rcanvas/pull/75) | open |
+| Fix `get_announcements()` and add announcement create/update/delete support | [#76](https://github.com/daranzolin/rcanvas/pull/76) | open |
 
 `get_course_gradebook()` rewrite ([#73](https://github.com/daranzolin/rcanvas/pull/73))
 is already merged upstream and is not a divergence.
@@ -50,9 +51,10 @@ install line goes back to `daranzolin/rcanvas`.
 
 ## Known upstream bugs not yet fixed here
 
-- [#50](https://github.com/daranzolin/rcanvas/issues/50) / [#70](https://github.com/daranzolin/rcanvas/issues/70) —
-  the same `canvas_url()` slash bug in other call sites. [#65](https://github.com/daranzolin/rcanvas/pull/65)
-  (open since 2023) fixes most of them; ours covers `pages.R` only.
+- [#50](https://github.com/daranzolin/rcanvas/issues/50) — the same
+  `canvas_url()` slash bug in other call sites. [#65](https://github.com/daranzolin/rcanvas/pull/65)
+  (open since 2023) fixes most of them; #74 covers `pages.R`, and #76 fixes the
+  announcements call identified in [#70](https://github.com/daranzolin/rcanvas/issues/70).
 - [#68](https://github.com/daranzolin/rcanvas/issues/68) — `get_course_gradebook()`
   is slow: it pages submissions per assignment. 311 seconds for 679 students and
   40 assignments. Canvas's `/students/submissions` endpoint with
