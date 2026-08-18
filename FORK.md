@@ -41,8 +41,10 @@ is already merged upstream and is not a divergence.
 
 - [#50](https://github.com/daranzolin/rcanvas/issues/50) — the same
   `canvas_url()` slash bug in other call sites. [#65](https://github.com/daranzolin/rcanvas/pull/65)
-  (open since 2023) fixes most of them; #74 covers `pages.R`, and #76 fixes the
-  announcements call identified in [#70](https://github.com/daranzolin/rcanvas/issues/70).
+  was repaired, tested, and merged on 2026-08-18 for group and enrollment
+  endpoints; page, course, migration, and utility call sites remain. #74 covers
+  `delete_wpage()`, and #76 fixes the announcements call identified in
+  [#70](https://github.com/daranzolin/rcanvas/issues/70).
 - [#68](https://github.com/daranzolin/rcanvas/issues/68) — `get_course_gradebook()`
   is slow: it pages submissions per assignment. 311 seconds for 679 students and
   40 assignments. Canvas's `/students/submissions` endpoint with
